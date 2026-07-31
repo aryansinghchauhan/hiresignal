@@ -6,6 +6,7 @@ import cron from 'node-cron'
 import 'dotenv/config'
 
 import jobsRouter from './routes/jobs.js'
+import skillsRouter from './routes/skills.js'
 import { runScraper } from './services/scraper.js'
 
 const app = express()
@@ -26,6 +27,7 @@ app.use('/api', limiter)
 
 // Routes
 app.use('/api/jobs', jobsRouter)
+app.use('/api/skills', skillsRouter)
 
 // Health check
 app.get('/health', (req, res) => {
