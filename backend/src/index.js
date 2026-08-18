@@ -9,6 +9,7 @@ import authRouter from './routes/auth.js'
 import jobsRouter from './routes/jobs.js'
 import skillsRouter from './routes/skills.js'
 import mlRouter from './routes/ml.js'
+import gapRouter from './routes/gap.js'
 import { runScraper } from './services/scraper.js'
 
 const app = express()
@@ -32,6 +33,7 @@ app.use('/api/jobs', jobsRouter)
 app.use('/api/skills', skillsRouter)
 app.use('/api/ml', mlRouter)
 app.use('/api/auth', authRouter)
+app.use('/api/gap', gapRouter)
 
 // Health check
 app.get('/health', (req, res) => {
