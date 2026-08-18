@@ -4,6 +4,7 @@ import helmet from 'helmet'
 import rateLimit from 'express-rate-limit'
 import cron from 'node-cron'
 import 'dotenv/config'
+import authRouter from './routes/auth.js'
 
 import jobsRouter from './routes/jobs.js'
 import skillsRouter from './routes/skills.js'
@@ -30,6 +31,7 @@ app.use('/api', limiter)
 app.use('/api/jobs', jobsRouter)
 app.use('/api/skills', skillsRouter)
 app.use('/api/ml', mlRouter)
+app.use('/api/auth', authRouter)
 
 // Health check
 app.get('/health', (req, res) => {
